@@ -116,6 +116,19 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
 
 
 #pragma mark - Pyze
+/**
+ * Pyze main class
+ *
+ * This is the main class for the Pyze iOS SDK. Use method initializeWithKey: to initialize the Library.
+ * For troubleshooting during development and in debug mode, you can throttle the logging level using method
+ * debugLogThrottling:
+ * In the release mode or deployment the SDK will log minimally.
+ *
+ * Please visit [Pyze Developer Center](http://docs.pyze.com) for more information.
+ *
+ * You will need an app-specific key "Pyze App Key" from: [growth.pyze.com](https://growth.pyze.com/)
+ *
+ */
 
 @interface Pyze : NSObject
 
