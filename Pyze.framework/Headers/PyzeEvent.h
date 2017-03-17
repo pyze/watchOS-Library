@@ -261,11 +261,13 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+
+
 /**
  *  PyzeIdentity
- *  You can use this class to send the user's traits to Pyze.  This information is solely used to reachout to the user via channels you provide (email, SMS, MMS, Push Notifications, etc).  Pyze does not require or track user information.  Set the identifers you want to send and then call postIfChanged.
+ *  You can use this class to send the user’s traits to Pyze. You can identify a user using setUserIdentity method and reset the user’s identity using resetUserIdentity method
  
- *  - Since: v3.0.5
+ *  - Since: v3.2.3
  
  */
 @interface PyzeIdentity : NSObject
@@ -273,36 +275,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Set Identities Locally
 
-/// @name Class methods
-
-#pragma mark - Set Identities Locally
-
 /**
- *  Use this to identify users. Examples include: username, userid, email address, phone number, or a hashedId. Call this when a user logs in, registers or signs up.
+ *  Use this to identify users. Examples include: username, userid, email address, phone number, or a hashedId. Call this when a user logs in, registers or signs up
  *
  *  @param uniqueID An app specific user identifer
  
- *  - Since: v1.0.0
+ *  - Since: v3.2.3
  
  */
 +(void) setUserIdentifer:(nonnull NSString *)uniqueID;
 
 
 /**
- *  Resets App specific User Identifer.  Call this when a user logs off.
+ *  Resets App specific User Identifer. Call this when a user logs off.
  *
  
- *  - Since: v3.2.1
+ *  - Since: v3.2.3
  
  */
 +(void) resetUserIdentifer;
 
 
-
 /**
- *  Post the user details traits.
- *
- *  Here are some example traits you can use
+ *  Post the user traits to Pyze.  Send user traits as a map/dictionary.  Here are some example traits you can use.
  *
  *  Send user traits as a map/dictionary.  For example
  *
@@ -311,18 +306,18 @@ NS_ASSUME_NONNULL_BEGIN
  *          NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
  *          attributes[@"address"] = @"585 Broadway Street, Redwood City, California 94063";
  *          attributes[@"age"] = @"25";
- *          attributes[@"avatar"] =  @"https://about.me/muntek";
+ *          attributes[@"avatar"] =  @"https://mark.com";
  *          attributes[@"birthday"] =  @"01-04-1986";
  *          attributes[@"createdAt"] = @"Date String";
  *          attributes[@"description"] = @"Web Hosting Specialist";
  *          attributes[@"email"] =  @"myEmail@gmail.com";
- *          attributes[@"firstName"] =  @"Muntek";
+ *          attributes[@"firstName"] =  @"Mark";
  *          attributes[@"gender"] = @"male";
- *          attributes[@"lastName"] =  @"Singh";
- *          attributes[@"name"] =  @"Muntek Singh";
+ *          attributes[@"lastName"] =  @"Hive";
+ *          attributes[@"name"] =  @"Mark Hive";
  *          attributes[@"phoneNumber"] = @"415 555 1212";
  *          attributes[@"title"] = @"Web Hosting Specialist";
- *          attributes[@"username"] =  @"munteksingh";
+ *          attributes[@"username"] =  @"markh";
  *          attributes[@"website"] =  @"https://pyze.com";
  *          attributes[@"facebookId"] = @"USER_facebookId";
  *          attributes[@"twitterUsername"] = @"USER_twitterId";
@@ -332,7 +327,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *          [PyzeIdentity postTraits:attributes];
  *      }
- *  - Since: v3.2.2
+ 
+ *  - Since: v3.2.3
  
  */
 
