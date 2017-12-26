@@ -168,6 +168,22 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
  */
 + (void) initialize:( NSString *)pyzeAppKey withLogThrottling: (PyzeLogLevel) logLevel;
 
+/**
+ *  Initializes the Pyze library. Call this method in the app delegate's method
+ *  application:willFinishLaunchingWithOptions. [Get Pyze App Key from growth.pyze.com](http://pyze.com/get-Pyze-App-Key.html)
+ *  Include the 'Pyze App Key' in application's Info.plist with key name 'PYZE_APP_KEY'
+ *
+ *  Usage:
+ *
+ *     [Pyze initialize: PyzelogLevelMinimal];
+ *
+ *  @param logLevel Log level you would wish to see in the console.
+ *  @warning *Important:* Get an app-specific key from [growth.pyze.com](http://pyze.com/get-Pyze-App-Key.html) asn save in info
+ *
+ *  - Since: 2.0.5
+ *
+ */
++ (void) initializeWithLogLevel:(PyzeLogLevel) logLevel;
 
 /**
  *  Log throttling level can be changed anytime in the app
