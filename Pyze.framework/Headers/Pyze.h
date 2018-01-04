@@ -224,6 +224,15 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
  */
 +(double) timerReference;
 
+
+/**
+ *  Returns the Pyze instance identifier. If Pyze not initialized, returns an empty string.
+ *
+ *  @return Pyze Instance identifier
+ */
++ (NSString *) getPyzeAppInstanceId;
+
+
 /**
  *  Hash function can be used to convert any NSString to an hashed equivalent.
  *  The generated string is suffixed with two hash characters ##
